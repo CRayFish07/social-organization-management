@@ -105,7 +105,8 @@ $(function(){
 		//console.log($(this).val());
 		$('#name1').val($(this).val());
 		var data = {
-			name: $(this).val()
+			name: $(this).val(),
+			flags: 'name'
 		};
 		var strdata = JSON.stringify(data);
 		$.post('findMember', {myjson: strdata}, function(data, textStatus, xhr) {
@@ -183,11 +184,12 @@ $(function(){
 		$('#myDropdown').html('全部<span class="caret"></span>');
 		$('#second-select').html('');
 		$('#orderLabel').text('');
+		//$('#nameForFind').val('');
 		updateMemberByName({
 			name: $('#nameForFind').val(),
 			flags: 'name'
 		});
-		//$('#nameForFind').val('');
+		$('#nameForFind').val('');
 	});
 
 	//排序

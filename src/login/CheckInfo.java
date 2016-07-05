@@ -4,7 +4,7 @@ import com.opensymphony.xwork2.*;
 import java.sql.*;
 import java.util.*;
 
-import jq.User;
+import login.AdminBean;
 import net.sf.json.JSONObject;
 
 import org.apache.struts2.json.annotations.JSON;
@@ -14,9 +14,9 @@ public class CheckInfo extends ActionSupport{
 	
 	@Override public String execute(){
 		//处理接收的myjson变量
-		System.out.println(myjson);
+		//System.out.println(myjson);
 		AdminBean admin = (AdminBean) getJsonObj(myjson, AdminBean.class);
-		System.out.println(admin.username + ", " + admin.password);
+		//System.out.println(admin.username + ", " + admin.password);
 		
 		AdminBean adminJson = new AdminBean();
 		//连接数据库

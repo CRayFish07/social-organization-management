@@ -13,11 +13,11 @@ public class GetMember extends ActionSupport{
 	private Map<String,Object> dataMap;
 	
 	@Override public String execute(){
-		//´¦Àí½ÓÊÕµÄmyjson±äÁ¿
+		//Â´Â¦Ã€Ã­Â½Ã“ÃŠÃ•ÂµÃ„myjsonÂ±Ã¤ÃÂ¿
 		Member member = (Member) getJsonObj(myjson, Member.class);
-		//·â×°·µ»ØµÄjson¶ÔÏó(Êı×é)
+		//Â·Ã¢Ã—Â°Â·ÂµÂ»Ã˜ÂµÃ„jsonÂ¶Ã”ÃÃ³(ÃŠÃ½Ã—Ã©)
 		dataMap = new HashMap<String, Object>();
-		//Á¬½ÓÊı¾İ¿â
+		//ÃÂ¬Â½Ã“ÃŠÃ½Â¾ÃÂ¿Ã¢
 		try{
 			 String URL = "jdbc:mysql://localhost/community?autoReconnect=true&useSSL=false";
 	         Class.forName("com.mysql.jdbc.Driver");
@@ -37,7 +37,7 @@ public class GetMember extends ActionSupport{
 	         }else if((member.flags).equals("reverseOrder")){
 	        	 sql = "select * from members order by jointime desc";
 	         }else{
-	        	 System.out.println("Î´Ê¶±ğµÄflags");
+	        	 System.out.println("ÃÂ´ÃŠÂ¶Â±Ã°ÂµÃ„flags");
 	         }
 	         Statement stmt = con.createStatement();
 	         ResultSet rs = stmt.executeQuery(sql);
@@ -56,6 +56,7 @@ public class GetMember extends ActionSupport{
 	         //System.out.println(dataMap);
 	         //stmt.executeUpdate(sql);
 	         //memberJson.setIsOk(true);
+	         //å…¶ä½™ä»£ç å¦‚4.3.5
 		}catch(Exception e){
 			System.out.print(e);
 		}
@@ -63,7 +64,7 @@ public class GetMember extends ActionSupport{
 		return SUCCESS;
 	}
 
-	//°Ñjson×Ö·û´®¶ÔÏó×ª»»³Éjava¶ÔÏó
+	//Â°Ã‘jsonÃ—Ã–Â·Ã»Â´Â®Â¶Ã”ÃÃ³Ã—ÂªÂ»Â»Â³Ã‰javaÂ¶Ã”ÃÃ³
 	public static Object getJsonObj(String jsonString, Class clazz) {
 		JSONObject jsonObject = null;
 		try {

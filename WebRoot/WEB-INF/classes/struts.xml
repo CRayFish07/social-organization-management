@@ -9,7 +9,11 @@
     <constant name="struts.devMode" value="true" />
 
     <package name="default" extends="struts-default,json-default">
-    	
+    	<action name="checkLogin" class="login.CheckInfo">
+    		<result name="success" type="json">
+    			<param name="root">dataMap</param>
+    		</result>
+    	</action>
     </package>
     
     <package name="management" extends="struts-default,json-default">
@@ -20,6 +24,12 @@
     	</action>
     	
     	<action name="getMembersBySelected" class="managementSystem.GetMember">
+    		<result name="success" type="json">
+    			<param name="root">dataMap</param>
+    		</result>
+    	</action>
+    	
+    	<action name="findMember" class="managementSystem.GetMember">
     		<result name="success" type="json">
     			<param name="root">dataMap</param>
     		</result>

@@ -19,18 +19,29 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-
+  <link rel="stylesheet" type="text/css" href="dist/css/bootstrap.min.css">
   </head>
   
-  <body>
-    <div id="formdiv">
-    	username:<input type="text" name="username" />
-    	password:<input type="text" name="password" />
-    	<button id="btn">点击</button>
+  <body style="background-image: url(imgs/bg3.jpg)">
+  <br><br><br><br><br><br><br><br>
+  <div class="col-xs-4 col-xs-offset-5">
+    <div class="form-group">
+      <label for="username" style="color: #52A124">用户名</label>
+        <div class="input-group">
+            <input type="text" class="form-control" id="username" placeholder="Telephone Number" required="required">
+            <div class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></div>
+        </div>
     </div>
-    <div id="warn">
-      <h3></h3>
+    <div class="form-group">
+      <label for="password" style="color: #52A124">密码</label>
+        <div class="input-group">
+            <input type="password" class="form-control" id="password" placeholder="Password" required="required">
+            <div class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></div>
+        </div>
     </div>
+    <br>
+    <input type="button" value="提交"  class="btn btn-default" name="btnSubmit" id="btnSubmit"/>&nbsp;&nbsp;&nbsp;<h3 style="color: #E3E5C0" id="warnMsg"></h3>
+  </div>
     
     <script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
     <script type="text/javascript" src="js/login.js"></script>
